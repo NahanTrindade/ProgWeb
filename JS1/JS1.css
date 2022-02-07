@@ -1,0 +1,17 @@
+td {
+    text-align: center;
+}
+
+table, td, th {
+    border: 1px solid black;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+table {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
