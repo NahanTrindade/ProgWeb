@@ -24,9 +24,6 @@ function jokenpo(jogador, computador) {
     }
 }
 
-  
-}
-
 
 
 
