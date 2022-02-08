@@ -15,7 +15,7 @@ for (let i = 0; i < 10; i++) {
             conteudo.innerHTML = (i + 1) + 'x' + j;
             linha.appendChild(conteudo);
             conteudo = document.createElement("td");
-            conteudo.innerHTML = j;
+            conteudo.innerHTML = j * (i+1);
             linha.appendChild(conteudo);
         } else {
             conteudo = document.createElement("th");
