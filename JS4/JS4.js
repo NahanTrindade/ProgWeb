@@ -91,6 +91,45 @@ class IntegerSet {
     }
 }
 
+let max;
+console.log("Valor maximo do conjunto 1:")
+max = parseInt(prompt());
+let c1 =  new IntegerSet(max);
+console.log("Valor maximo do conjunto 2:")
+max = parseInt(prompt());
+let c2 = new IntegerSet(max);
+let acao = 0, val = 0;
 
+do{
+    console.log("O que deseja fazer?:\n1 - Inserir elemento no Conjunto 1\n2 - Excluir elemento do Conjunto 1\n3 - Inserir elemento no Conjunto 2\n4 - Excluir elemento do Conjunto 2\n0 - Nenhuma alternativa"); 
+    acao = parseInt(prompt());
+
+    switch (acao) {
+        case 1:
+            console.log("Qual valor quer inserir?");
+            val = parseInt(prompt());
+            c1.inserir(val);
+            console.log("Operação realizada com sucesso");
+            break;
+        case 2:
+            console.log("Qual valor quer excluir?");
+            val = parseInt(prompt());
+            c1.excluir(val);
+            console.log("Operação realizada com sucesso");
+            break;
+        case 3:
+            console.log("Qual valor quer inserir?");
+            val = parseInt(prompt());
+            c2.inserir(val);
+            console.log("Operação realizada com sucesso");
+            break;
+        case 4:
+            console.log("Qual valor quer excluir?");
+            val = parseInt(prompt());
+            c2.excluir(val);
+            console.log("Operação realizada com sucesso");
+            break;
+    }
+}while(acao); 
 
 
