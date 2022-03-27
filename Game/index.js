@@ -14,6 +14,7 @@ app.engine("handlebars", engine({
 app.set("view engine", "handlebars");
 app.set("views", `${__dirname}/app/views`);
 
+app.use("/img", express.static(`${__dirname}/src/public/img`))
 app.use(router);
 
 app.listen(PORT, () => {
