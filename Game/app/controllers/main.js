@@ -7,7 +7,11 @@ const about = (req, res) => {
 }
 
 const ui = (req, res) => {
-    res.render("main/ui", {layout: "main"});
+    res.render("main/ui", { layout: "main" });
 }
 
-export default { index, about, ui }
+const game = (req, res) => {
+    res.render("main/game", { layout: "main" });
+}
+
+export default { index, about, ui, game }
