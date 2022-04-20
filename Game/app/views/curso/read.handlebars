@@ -1,8 +1,8 @@
-<div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+<div class="card text-white bg-dark mb-3 flex">
     <div class="card-header">{{curso.nome}}
         <div>
             <a href="/curso/update/{{curso.id}}"><i class="fas fa-pen"></i></a>
-            <a href="/curso/remove/{{curso.id}}"><i class="far fa-trash-alt"></i></a>
+            <a ><i class="far fa-trash-alt" data-bs-toggle="modal" data-bs-target="#exampleModal" ></i></a>
         </div>
     </div>
     <div class="card-body">
@@ -16,7 +16,27 @@
             <b>Descrição: </b> {{curso.descricao}}
         </div>
         <div>
-            <b>Área: </b> {{curso.areaId}}
+            <b>Área: </b> {{curso.Area.nome}}
         </div>
     </div>
+</div>
+
+<div class="modal" id="exampleModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Deleção de curso</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Tem certeza que você deseja apagar o curso {{curso.nome}}? Essa operação não pode ser desfeita </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Sim, quero apagar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
 </div>
