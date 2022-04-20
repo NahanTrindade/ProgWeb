@@ -1,0 +1,13 @@
+    O padrão MVC é um padrão de desenvolvimento que visa a otimização da aplicação tanto na questão técnica quanto no seu desenvolvimento
+separando a aplicaçã em 3 camadas dintintas que trocam informações entre si para a construção da aplicação.
+
+
+    A camada Model representa toda a lógica de programação por baixo do sistema, esta camada é responsável pelas execução das 
+operações que o sistema possui, ela se comunica com a camada Controller de onde recebe suas ordens e devolve os resultados.
+
+    A camada View representa a parte externa da aplicação, ou seja, essa camada é responsável pela interação direta com o usuário,
+ela gerencia tudo o que será exibido de forma geral e funciona como a entrada de dados da aplicação que serão utilizados pelas demais camadas
+
+    A camada Controlleré a grande ponte que irá unir todas as camadas, essa camada é responsável por gerenciar a View e Model e integrar
+o resultado final da aplicação recebendo e enviando dados entre as outras duas camadas.
+ 
