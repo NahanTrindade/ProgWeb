@@ -1,0 +1,22 @@
+Erro 01:
+    Linha - 04
+    Descrição - O intuito da linha era ser um comentário, porém diferente de outras linguagens os sinais '/*' e '*/' no html não
+                representam comentários.
+    Solução - Para se comentar em um código HTML deve utilizar as tags <!-- (conteudo) --> .
+
+Erro 02:
+    Linhas -  08, 09
+    DescriçãO - O intuito do trecho é aplicar estilização nos elementos com id 'para', porém a atribuição das propriedades css 
+                está feita de forma incorreta utilizando '=' .
+    Solução - Mesmo dentro do código html a tag style segue as regras de sintaxe do CSS, onde é utilizado ':' para atribuir o valor 
+                na propriedade CSS ao inves do '='.
+
+Erro 03:
+    Linha - 17
+    DescriçãO - Tag strong é aberta, porém não é fechada.
+    Solução - Adição do fechamendo da tag strong com </strong> no fim do conteúdo que se deseja aplicar seu efeito.
+
+Erro 04:
+    Linha - 26
+    Descrição - Termo 'that' incorretamente utilizado no método para referenciar ao próprio objeto.
+    Solução - Substituição do 'that' para 'this' ao se referenciar o proprio objeto.
