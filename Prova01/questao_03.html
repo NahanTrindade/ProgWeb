@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 3</title>
+</head>
+<body>
+
+        <input type="text" id="campo">
+
+    <script>
+        var campo = document.getElementById('campo');
+
+        campo.addEventListener("keydown", controlador = (e)=> {
+            if(e.key === 'Q' || e.key === 'W' || e.key === 'X' || e.key === 'q' || e.key === 'w' || e.key === 'x'){
+                event.preventDefault();
+            }
+        })
+
+    </script>
+</body>
+</html>
