@@ -1,3 +1,5 @@
+Comentário: A descrição dos modelos está parcialmente correta. Nota 1.8
+
     O padrão MVC é um padrão de desenvolvimento que visa a otimização da aplicação tanto na questão técnica quanto no seu desenvolvimento
 separando a aplicaçã em 3 camadas dintintas que trocam informações entre si para a construção da aplicação.
 

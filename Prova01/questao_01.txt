@@ -1,3 +1,5 @@
+Comentário: todos os erros foram reportados corretamente. Nota 2.0
+
 Erro 01:
     Linha - 04
     Descrição - O intuito da linha era ser um comentário, porém diferente de outras linguagens os sinais '/*' e '*/' no html não
