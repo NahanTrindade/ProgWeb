@@ -10,7 +10,9 @@ async function index(req, res) {
 
 const create = async (req, res) => {
     if (req.route.methods.get) {
-        res.render('curso/create');
+        res.render('curso/create', {
+            csrf: req.csrfToken(),
+        });
     } else {
         try {
             await Curso.create(req.body);
@@ -33,7 +35,7 @@ async function read(req, res) {
     } catch (e) {
         console.log(e);
     }
-    
+
 };
 
 async function update(req, res) {
@@ -43,7 +45,10 @@ async function update(req, res) {
         }
     })
     if (req.route.methods.get) {
-        res.render("curso/update", { curso: curso.toJSON() });
+        res.render("curso/update", { 
+            curso: curso.toJSON(),
+            csrf: req.csrfToken(),
+        });
     } else {
         try {
             await Curso.update({
@@ -64,8 +69,15 @@ async function update(req, res) {
 };
 
 async function remove(req, res) {
-    await Curso.destroy({ where: { id: req.params.id } });
-    res.redirect(`/curso/`);
+
+    try {
+        await Curso.destroy({ where: { id: req.params.id } });
+        res.status(200).send("Curso apagado com sucesso");
+    } catch (e) {
+        console.log(e);
+        res.status(500).send(e);
+    }
+
 };
 
 export default { index, read, create, update, remove };
