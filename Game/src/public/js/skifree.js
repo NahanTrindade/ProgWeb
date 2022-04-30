@@ -5,49 +5,6 @@
     const TAMY = 400;
     const PROB_OBS = 5;
 
-    let montanha;
-    let skier;
-    let painel;
-    let gameLoop;
-    let contMetros;
-    let velocidade = 2;
-
-    const obstaculos = [];
-
-    function init() {
-        montanha = new Montanha();
-        skier = new Skier();
-        painel = new Painel();
-
-        gameLoop = setInterval(run, 1000 / FPS);
-        contMetros = setInterval(() => {
-            painel.atualizaMetros(velocidade)
-        }, 1000);
-    }
-
-    function end() {
-        clearInterval(gameLoop);
-        clearInterval(contMetros);
-        window.removeEventListener('keydown', controle);
-    }
-
-    window.addEventListener('keydown', controle = (e) => {
-        if (e.key === 'ArrowLeft') {
-            skier.mudarDirecao(-1);
-
-        } else if (e.key === 'ArrowRight') {
-            skier.mudarDirecao(+1);
-        }
-    });
-
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'f' && velocidade === 2) {
-            ++velocidade;
-        } else if (e.key === 'f' && velocidade === 3) {
-            --velocidade;
-        }
-    });
-
     class Montanha {
         constructor() {
             this.element = document.getElementById('montanha');
@@ -139,14 +96,12 @@
         constructor() {
             this.element = document.getElementById('painel');
             this.marcador_vidas = document.getElementById('vidas');
-            this.marcador_pontuacao = document.getElementById('pontuacao');
+            this.marcador_pontuacao = document.getElementById('pontuacao_label');
             this.vida = 3;
             this.pontuacao = 0;
 
             this.marcador_vidas.innerHTML = `Vidas: ${this.vida}`
             this.marcador_pontuacao.innerHTML = `Pontuação: ${this.pontuacao}`
-
-
         }
 
         atualizaVida(skier) {
@@ -156,6 +111,7 @@
 
         atualizaMetros(velocidade) {
             this.pontuacao += velocidade * 10;
+            document.getElementById('pontuacao').value = this.pontuacao;
             this.marcador_pontuacao.innerHTML = `Pontuação: ${this.pontuacao}`
         }
     }
@@ -178,6 +134,48 @@
             }
         }
     }
+
+    let montanha = new Montanha();
+    let skier = new Skier();
+    let painel = new Painel();
+    let gameLoop;
+    let contMetros;
+    let velocidade = 2;
+
+    const obstaculos = [];
+
+    function init() {
+        gameLoop = setInterval(run, 1000 / FPS);
+        contMetros = setInterval(() => {
+            painel.atualizaMetros(velocidade)
+        }, 1000);
+    }
+
+    function end() {
+        clearInterval(gameLoop);
+        clearInterval(contMetros);
+        window.removeEventListener('keydown', controle);
+        const botao_salvar = document.getElementById("botao_salvar");
+        botao_salvar.style.display = 'block';
+    }
+
+    window.addEventListener('keydown', controle = (e) => {
+        if (e.key === 'ArrowLeft') {
+            skier.mudarDirecao(-1);
+
+        } else if (e.key === 'ArrowRight') {
+            skier.mudarDirecao(+1);
+        }
+    });
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'f' && velocidade === 2) {
+            ++velocidade;
+        } else if (e.key === 'f' && velocidade === 3) {
+            --velocidade;
+        }
+    });
+
 
 
     function run() {
@@ -202,6 +200,9 @@
         })
     }
 
+    
+    
 
     init();
+
 })();

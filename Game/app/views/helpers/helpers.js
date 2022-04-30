@@ -7,8 +7,6 @@ export function printError(errors, campo) {
             }
         })
     }
-
-
     return message;
 }
 

@@ -1,0 +1,20 @@
+<div class="campos">
+    <div id="montanha">
+        <div id="skier">
+        </div>
+    </div>
+
+    <form action="/save" method="post" id="painel">
+        <label id="vidas"></label>
+        <label for="pontuacao" id="pontuacao_label">Pontuação: 0</label>
+        <input type="hidden" name="pontuacao" id="pontuacao" value="">
+        <input type="hidden" name="userId" id="userId" value="{{userId}}">
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+        <button type="submit" class="btn btn-primary mt-4" id="botao_salvar">Salvar</button>
+    </form>
+</div>
+
+<script src="/js/skifree.js"></script>
+<script>
+
+</script>

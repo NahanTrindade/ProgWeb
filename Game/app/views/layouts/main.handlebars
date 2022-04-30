@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/game">Jogar
+                        <a class="nav-link active" href="/jogo">Jogar
                             <span class="visually-hidden">(current)</span>
                         </a>
                     </li>
@@ -34,6 +34,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/areas">Áreas</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ranking">Ranking</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    {{#if isLogged}}
+                    <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+                    {{else}}
+                    <li class="nav-item"><a href="/cadastro" class="nav-link">Signup</a></li>
+                    <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+                    {{/if}}
+
+                </ul>
             </div>
     </nav>
     <div class="container main-body">{{{body}}}</div>

@@ -1,7 +1,6 @@
-.campo {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 5%;
+.campos {
+   display: flex;
+   justify-content: center;
 }
 
 #montanha {
@@ -10,6 +9,8 @@
    border-radius: 10px;
    position: relative;   
    overflow: hidden;
+
+   margin-right: 10px;
 }
 
 #skier {
@@ -18,20 +19,16 @@
 
 #painel {
    width: 150px;
-   height: 200px;
-   border: 5px solid #051367;
-   background: #f8f8f8;
+   height: 250px;
    position: relative;
-   margin-top: 20px;
-   text-align: center;
+   display: flex;
+   flex-direction: column;
+
+   align-items: center;
 }
 
 #vidas {
-   color: blue;
-}
-
-#pontuacao {
-   color: blue;
+   padding-top: 10px;
 }
 
 .para-frente {
@@ -128,4 +125,8 @@
    width: 14px;
    height: 14px;
    position: absolute;
+}
+
+#botao_salvar {
+   display: none;
 }

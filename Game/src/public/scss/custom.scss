@@ -22,3 +22,32 @@
     display: flex;
     justify-content: space-between;
 }
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+
+    width: 50%;
+
+    p, h1 {
+        text-align: center;   
+    }
+
+    button {
+        width: 100%;
+    }
+
+    a{
+        text-decoration: none;
+    }
+}
+
+
+.about{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+

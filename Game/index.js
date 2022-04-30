@@ -4,11 +4,15 @@ import { engine } from "express-handlebars";
 import sass from "node-sass-middleware";
 import cookieParser from "cookie-parser";
 import csurf from "csurf";
+import session from "express-session";
+import { v4 as uuidv4 } from "uuid";
+import dotenv from 'dotenv';
 
 const morgan = require("morgan");
 
 const app = express();
-const PORT = 4444;
+dotenv.config();
+
 app.use(morgan("short"));
 
 app.engine("handlebars", engine({
@@ -43,17 +47,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(csurf({ cookie: true }));
 
-app.get('/cookie', (req, res) => {
-    if (!('usuario' in req.cookies)) {
-        res.cookie('usuario', '1234');
-        res.send('Usuario não identificado. Criando cookie agora!');
-    } else {
-        res.send(`Usuario Identificado. ID ${req.cookies['usuario']}`);
-    }
+app.use(session({
+    genid: (req) => {
+        return uuidv4();
+    },
+    secret: 'Hi9Cf#mK98' ,
+    resave: false,
+    saveUninitialized: true
+}))
+
+app.use((req, res, next) => {
+    app.locals.isLogged = 'uid' in req.session;
+    next();
 })
 
 app.use(router);
 
-app.listen(PORT, () => {
-    console.log("Executando na porta 4444!");
+app.listen(process.env.PORT, () => {
+    console.log(`Executando na porta ${process.env.PORT}!`);
 });

@@ -1,0 +1,28 @@
+<section class="formulario">
+    <h1 class="form-titulo">Acesse sua conta</h1>
+
+    <form action="/login" method="post" class="form">
+        <input type="hidden" name="_csrf" value='{{csrf}}'>
+        <div class="form-group mt-4">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Endereço de e-mail" required>
+        </div>
+        <div class="form-group mt-4">
+            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required>
+        </div>
+
+        <div class="form-check mt-4">
+            <input class="form-check-input" type="checkbox" value="1" id="manter_login">
+            <label class="form-check-label" for="manter_login">
+                Mantenha-me logado</a>
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4">Acessar</button>
+
+        <a href="#" >
+            <p class="mt-4"> Esqueceu sua senha?</p>
+        </a>
+
+
+    </form>
+</section>

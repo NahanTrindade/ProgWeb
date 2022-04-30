@@ -3,7 +3,8 @@ import { Curso, Area } from "../models/index";
 async function index(req, res) {
     const cursos = await Curso.findAll();
     res.render('curso/index', {
-        cursos: cursos.map(curso => curso.toJSON())
+        cursos: cursos.map(curso => curso.toJSON(), ),
+        csrf: req.csrfToken(),
     });
 };
 
@@ -20,7 +21,8 @@ const create = async (req, res) => {
         } catch (errors) {
             res.render('curso/create', {
                 curso: req.body,
-                errors: errors
+                errors: errors,
+                csrf: req.csrfToken(),
             })
         }
     }
@@ -31,7 +33,7 @@ async function read(req, res) {
 
     try {
         const curso = await Curso.findByPk(id, { include: Area });
-        res.render("curso/read", { curso: curso.toJSON() })
+        res.render("curso/read", { curso: curso.toJSON() , csrf: req.csrfToken(),})
     } catch (e) {
         console.log(e);
     }
