@@ -16,7 +16,8 @@
             <td class="options">
                 <a href="/curso/{{id}}"><i class="fa-solid fa-eye"></i></a>
                 <a href="/curso/update/{{id}}" class="fa-solid fa-pen"></a>
-                <a href="/curso/remove/{{id}}" class="fa-solid fa-trash-alt" data-bs-toggle="modal" data-bs-target="#modal-curso-{{id}}"></a>
+                <a href="/curso/remove/{{id}}" class="fa-solid fa-trash-alt" data-bs-toggle="modal"
+                    data-bs-target="#modal-curso-{{id}}"></a>
             </td>
         </tr>
         {{/each}}
@@ -49,11 +50,13 @@
 
 {{#each cursos}}
 
-<script>  
+<script>
 
-  const botaodelecao = document.getElementById("botao-delecao-{{id}}");
-  botaodelecao.onclick = function () {
-    apagarCurso({{ id }});
+    const id = {{ id }};
+    const csrf = '{{csrf}}'
+    const botaodelecao = document.getElementById("botao-delecao-{{id}}");
+    botaodelecao.onclick = function () {
+        apagarCurso(id, csrf);
   }
 
 </script>
